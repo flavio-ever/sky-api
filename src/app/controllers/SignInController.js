@@ -26,11 +26,11 @@ class SignInController {
     });
 
     if (!user) {
-      return res.status(401).json({ error: 'Usuário não encontrado' });
+      return res.status(401).json({ error: 'Usuário e/ou senha inválidos' });
     }
 
     if (!(await bcrypt.compare(senha, user.senha))) {
-      return res.status(401).json({ error: 'Senha não confere' });
+      return res.status(401).json({ error: 'Usuário e/ou senha inválidos' });
     }
 
     const { guid, name, telefones } = user;
