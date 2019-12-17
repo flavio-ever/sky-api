@@ -20,6 +20,7 @@ class SignInController {
       return res.json({ error: 'Validation is fails' });
     }
 
+    // Consistência de email / senha
     const { email, senha } = req.body;
     const user = await User.findOne({
       email,

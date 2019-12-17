@@ -31,7 +31,7 @@ class SignUpController {
 
     const { nome, email, senha, telefones } = req.body;
 
-    // Concistencia e-mail
+    // Consistencia e-mail
     const existeEmail = await User.find({
       email,
     });
