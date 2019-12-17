@@ -1,4 +1,7 @@
 import {} from 'date-fns';
+import uuidV1 from 'uuid/v1';
+import bcrypt from 'bcryptjs';
+
 import * as Yup from 'yup';
 
 import Usuario from '../schemas/Usuario';
@@ -21,20 +24,21 @@ class SignUpController {
       ),
     });
 
-    const user = req.body;
-
-    if (!(await schema.isValid(user))) {
+    if (!(await schema.isValid(req.body))) {
       return res.json({ error: 'Falha na validação do formulário' });
     }
 
-    const usuario = await Usuario.create([
-      {
-        ...user,
-        data_criacao: new Date(),
-        data_atualizacao: new Date(),
-        ultimo_login: new Date(),
-      },
-    ]);
+    const { nome, email, senha } = req.body;
+
+    const senha_hash = await bcrypt.hash(senha, 8);
+
+    const usuario = await Usuario.create({
+      nome,
+      email,
+      senha: senha_hash,
+      guid: uuidV1(),
+      ultimo_login: new Date(),
+    });
 
     return res.json(usuario);
   }

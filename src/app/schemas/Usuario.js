@@ -1,7 +1,12 @@
 import mongoose from 'mongoose';
+import bcrypt from 'bcryptjs';
 
 const UsuarioSchema = mongoose.Schema(
   {
+    guid: {
+      type: String,
+      required: true,
+    },
     nome: {
       type: String,
       required: true,
@@ -16,14 +21,6 @@ const UsuarioSchema = mongoose.Schema(
     },
     telefones: {
       type: Array,
-      required: true,
-    },
-    data_criacao: {
-      type: Date,
-      required: true,
-    },
-    data_atualizacao: {
-      type: Date,
       required: true,
     },
     ultimo_login: {
