@@ -52,7 +52,7 @@ Na pasta **rest/** é possível encontrar o arquivo de configuração do Insomin
 }
 ```
 
-- `POST /signin`: Busca de usuário a partir do token (Bearer):
+- `POST /user`: Busca de usuário a partir do token (Bearer):
 
 
 ### :memo: Licença
