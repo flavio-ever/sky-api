@@ -1,8 +1,7 @@
 import 'dotenv/config';
+import './database';
 import express from 'express';
 import routes from './router';
-
-// import './database';
 
 class App {
   constructor() {

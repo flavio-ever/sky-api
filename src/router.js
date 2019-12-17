@@ -1,6 +1,6 @@
 import { Router } from 'express';
 
-import SignInController from './controllers/SignInController';
+import SignInController from './app/controllers/SignInController';
 
 const routes = Router();
 
