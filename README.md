@@ -4,6 +4,7 @@
 
 ### :rocket: Sobre o desafio
 Backend completo de um serviço "cadastro, login e busca" utilizando as seguintes tecnologias:
+-   [Yarn](https://yarnpkg.com/lang/en/)
 -   [Node.js](https://nodejs.org/en/)
 -   [Express](https://expressjs.com/)
 -   [Nodemon](https://nodemon.io/)
@@ -20,10 +21,16 @@ Backend completo de um serviço "cadastro, login e busca" utilizando as seguinte
 ### Tempo de desenvolvimento
 - 6 horas corridas
 
+### Instalando as dependencias
+``yarn install``
+
+### Iniciando a aplicação
+``yarn dev`` / ``yarn dev:debug`` / ``yarn build``/ ``yarn start``
+
 ### Rotas
 Na pasta **rest/** é possível encontrar o arquivo de configuração do Insominia Rest, mas sinta-se a vontade para utilizar o que quiser.
 
-- `POST /signout`: Criação de usuário;
+- `POST /signup`: Criação de usuário;
 
 ```js
 {
@@ -48,7 +55,7 @@ Na pasta **rest/** é possível encontrar o arquivo de configuração do Insomin
 }
 ```
 
-- `POST /signin`: Busca de usuário a partir do token (Bearer):
+- `POST /user`: Busca de usuário a partir do token (Bearer):
 
 
 ### :memo: Licença
