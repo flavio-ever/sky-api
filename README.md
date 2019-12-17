@@ -27,7 +27,7 @@ Backend completo de um serviço "cadastro, login e busca" utilizando as seguinte
 ### Rotas
 Na pasta **rest/** é possível encontrar o arquivo de configuração do Insominia Rest, mas sinta-se a vontade para utilizar o que quiser.
 
-- `POST /signout`: Criação de usuário;
+- `POST /signup`: Criação de usuário;
 
 ```js
 {
