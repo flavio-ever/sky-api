@@ -4,6 +4,7 @@ const UserSchema = mongoose.Schema(
   {
     guid: {
       type: String,
+      unique: true,
     },
     nome: {
       type: String,
@@ -11,6 +12,7 @@ const UserSchema = mongoose.Schema(
     email: {
       type: String,
       required: true,
+      unique: true,
     },
     senha: {
       type: String,
