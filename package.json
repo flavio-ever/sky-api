@@ -6,7 +6,8 @@
   "repository": "git@github.com:flavio-ever/sky-api.git",
   "author": "Flavio Ever <flavio.ever@icloud.com>",
   "scripts": {
-    "dev": "nodemon src/server"
+    "dev": "nodemon src/server",
+    "dev:debug": "nodemon --inspect src/server"
   },
   "license": "MIT",
   "dependencies": {
