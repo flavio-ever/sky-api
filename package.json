@@ -1,0 +1,23 @@
+{
+  "name": "sky-api",
+  "version": "1.0.0",
+  "description": "A simple API",
+  "main": "index.js",
+  "repository": "git@github.com:flavio-ever/sky-api.git",
+  "author": "Flavio Ever <flavio.ever@icloud.com>",
+  "scripts": {
+    "dev": "nodemon src/server"
+  },
+  "license": "MIT",
+  "dependencies": {
+    "express": "^4.17.1"
+  },
+  "devDependencies": {
+    "eslint": "^6.7.2",
+    "eslint-config-prettier": "^6.7.0",
+    "eslint-plugin-prettier": "^3.1.2",
+    "nodemon": "^2.0.2",
+    "prettier": "^1.19.1",
+    "sucrase": "^3.10.1"
+  }
+}
