@@ -1,15 +1,12 @@
 import mongoose from 'mongoose';
-import bcrypt from 'bcryptjs';
 
-const UsuarioSchema = mongoose.Schema(
+const UserSchema = mongoose.Schema(
   {
     guid: {
       type: String,
-      required: true,
     },
     nome: {
       type: String,
-      required: true,
     },
     email: {
       type: String,
@@ -21,11 +18,9 @@ const UsuarioSchema = mongoose.Schema(
     },
     telefones: {
       type: Array,
-      required: true,
     },
     ultimo_login: {
       type: Date,
-      required: true,
     },
   },
   {
@@ -33,4 +28,4 @@ const UsuarioSchema = mongoose.Schema(
   }
 );
 
-export default mongoose.model('Usuario', UsuarioSchema);
+export default mongoose.model('User', UserSchema);

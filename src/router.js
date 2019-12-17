@@ -1,9 +1,13 @@
 import { Router } from 'express';
 
-import SignInController from './app/controllers/SignUpController';
+import UserController from './app/controllers/UserController';
+import SessionController from './app/controllers/SessionController';
 
 const routes = Router();
 
-routes.post('/signup', SignInController.create);
+routes.post('/user/signup', UserController.store);
+routes.get('/user/find', UserController.show);
+
+routes.post('/user/signin', SessionController.store);
 
 export default routes;

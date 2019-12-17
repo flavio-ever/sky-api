@@ -4,10 +4,10 @@ import bcrypt from 'bcryptjs';
 
 import * as Yup from 'yup';
 
-import Usuario from '../schemas/Usuario';
+import User from '../schemas/User';
 
-class SignUpController {
-  async create(req, res) {
+class UserController {
+  async store(req, res) {
     const schema = Yup.object().shape({
       nome: Yup.string().required(),
       email: Yup.string()
@@ -24,15 +24,25 @@ class SignUpController {
       ),
     });
 
+    // Consistencia Inputs
     if (!(await schema.isValid(req.body))) {
       return res.json({ error: 'Falha na validação do formulário' });
     }
 
     const { nome, email, senha } = req.body;
 
+    // Concistencia e-mail
+    const existeEmail = await User.find({
+      email,
+    });
+
+    if (existeEmail.length) {
+      return res.json({ error: 'Email existente!' });
+    }
+
     const senha_hash = await bcrypt.hash(senha, 8);
 
-    const usuario = await Usuario.create({
+    const user = await User.create({
       nome,
       email,
       senha: senha_hash,
@@ -40,8 +50,12 @@ class SignUpController {
       ultimo_login: new Date(),
     });
 
-    return res.json(usuario);
+    return res.json(user);
+  }
+
+  async show(req, res) {
+    return res.json();
   }
 }
 
-export default new SignUpController();
+export default new UserController();
