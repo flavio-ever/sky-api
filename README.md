@@ -25,7 +25,7 @@ Backend completo de um serviço "cadastro, login e busca" utilizando as seguinte
 ``yarn install``
 
 ### Iniciando a aplicação
-``yarn dev`` / ``yarn dev:debug``
+``yarn dev`` / ``yarn dev:debug`` / ``yarn build``/ ``yarn start``
 
 ### Rotas
 Na pasta **rest/** é possível encontrar o arquivo de configuração do Insominia Rest, mas sinta-se a vontade para utilizar o que quiser.
