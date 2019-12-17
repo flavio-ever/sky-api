@@ -21,7 +21,7 @@ Backend completo de um serviço "cadastro, login e busca" utilizando as seguinte
 ### Tempo de desenvolvimento
 - 6 horas corridas
 
-### Iniciando a aplicação:
+### Iniciando a aplicação
 ``yarn dev`` / ``yarn dev:debug``
 
 ### Rotas
