@@ -1,7 +1,7 @@
 class SignInController {
   async create(req, res) {
-
-    res.json({'message': 'Hello World!'});
+    const user = req.body;
+    res.json(user);
   }
 }
 

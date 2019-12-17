@@ -1,8 +1,9 @@
 import { Router } from 'express';
-const routes = Router();
 
 import SignInController from './controllers/SignInController';
 
-routes.get('/', SignInController.create);
+const routes = Router();
+
+routes.post('/signin', SignInController.create);
 
 export default routes;
